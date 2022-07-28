@@ -56,93 +56,140 @@ const Navbar = ({ navOpen, handleNav }) => {
                 </Box>
 
 
-                <Grid container mt="60px">
+                <Box sx={{
+                    display: "grid",
+                    placeItems: "center",
+                    minHeight: "calc(100vh - 60px)"
+                }}>
 
-                    <Grid item xs={12} md={3}></Grid>
+                    <Box>
 
-                    <Grid item xs={12} md={9}>
-                        <Box sx={{
-                            display: "flex"
-                        }}>
+                        <Grid container mt="60px">
 
-                            <Box sx={{
-                                display: "flex",
-                                gap: "60px"
-                            }}>
-
+                            <Grid item xs={12} md={9}>
                                 <Box sx={{
-                                    color: "#B4B4B4",
-                                    textAlign: "right"
+                                    display: "flex"
                                 }}>
-                                    <Typography color="#fff" fontSize="30px">Home</Typography>
-                                    <Typography my="20px" fontSize="30px">About</Typography>
 
                                     <Box sx={{
                                         display: "flex",
-                                        flexDirection: "column",
-                                        gap: "15px"
+                                        gap: "60px"
                                     }}>
-                                        <Typography fontSize="30px">Rooms</Typography>
-                                        <Typography>Premier</Typography>
-                                        <Typography>Junior</Typography>
-                                        <Typography>Deluxe</Typography>
-                                        <Typography>Senior</Typography>
+
+                                        <Box sx={{
+                                            color: "#B4B4B4",
+                                            textAlign: "right"
+                                        }}>
+                                            <Typography color="#fff" fontSize={{ xs: "20px", md: "30px" }}>Home</Typography>
+                                            <Typography my="20px" fontSize={{ xs: "20px", md: "30px" }}>About</Typography>
+
+                                            <Box sx={{
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                gap: "15px"
+                                            }}>
+                                                <Typography fontSize={{ xs: "20px", md: "30px" }}>Rooms</Typography>
+                                                <Typography>Premier</Typography>
+                                                <Typography>Junior</Typography>
+                                                <Typography>Deluxe</Typography>
+                                                <Typography>Senior</Typography>
+                                            </Box>
+
+
+                                            <Typography mt="20px" fontSize={{ xs: "20px", md: "30px" }}>Contact</Typography>
+                                        </Box>
+
+
+                                        <Box>
+                                            <Box sx={{
+                                                height: { xs: "330px", md: "500px" }
+                                            }} component="img" src="/navbar.png" alt="" />
+                                        </Box>
+
                                     </Box>
 
+                                    <Box sx={{
+                                        width: "2px",
+                                        height: "500px",
+                                        background: "#B4B4B4",
+                                        marginLeft: "40px",
+                                        display: { xs: "none", md: "block" }
+                                    }}></Box>
 
-                                    <Typography mt="20px" fontSize="30px">Contact</Typography>
+
+                                    <Stack sx={{
+                                        marginLeft: "80px",
+                                        color: "#fff",
+                                        justifyContent: "space-between",
+                                        display: { xs: "none", md: "flex" }
+                                    }}>
+                                        <Box sx={{
+                                            display: "flex",
+                                            gap: "10px"
+                                        }}>
+                                            <FiInstagram />
+                                            Follow Us!
+                                        </Box>
+
+
+                                        <Box>
+                                            <img src="/logo_main.png" alt="" />
+
+                                            <Typography mt="12px" fontSize="12px">12 King St, Scott Estate<br />
+                                                Cape Town, 7806<br />
+                                                South Africa <br /><br />
+
+                                                six7house@web.de</Typography>
+
+                                        </Box>
+
+
+
+                                    </Stack>
+
+
                                 </Box>
+                            </Grid>
+
+                        </Grid>
 
 
-                                <Box>
-                                    <img height="500px" src="/navbar.png" alt="" />
-                                </Box>
+
+                        <Box sx={{
+                            display: { xs: "block", md: "none" },
+                            mt: "14px",
+                            position: "relative"
+                        }}>
+
+                            <Box>
+                                <img width="50px" src="/logo_main.png" alt="" />
+
+                                <Typography mt="4px" color="#fff" fontSize="12px">12 King St, Scott Estate<br />
+                                    Cape Town, 7806<br />
+                                    South Africa <br /><br />
+
+                                    six7house@web.de</Typography>
 
                             </Box>
 
                             <Box sx={{
-                                width: "2px",
-                                height: "500px",
-                                background: "#B4B4B4",
-                                marginLeft: "40px"
-                            }}></Box>
-
-
-                            <Stack sx={{
-                                marginLeft: "80px",
+                                display: "flex",
+                                gap: "10px",
                                 color: "#fff",
-                                justifyContent: "space-between"
+                                position: "absolute",
+                                bottom: 0,
+                                right: 0,
+                                fontSize: "12px"
                             }}>
-                                <Box sx={{
-                                    display: "flex",
-                                    gap: "10px"
-                                }}>
-                                    <FiInstagram />
-                                    Follow Us!
-                                </Box>
-
-
-                                <Box>
-                                    <img src="/logo_main.png" alt="" />
-
-                                    <Typography mt="12px" fontSize="12px">12 King St, Scott Estate<br />
-                                        Cape Town, 7806<br />
-                                        South Africa <br /><br />
-
-                                        six7house@web.de</Typography>
-
-                                </Box>
-
-
-
-                            </Stack>
-
+                                <FiInstagram />
+                                Follow Us!
+                            </Box>
 
                         </Box>
-                    </Grid>
 
-                </Grid>
 
+                    </Box>
+                </Box>
 
 
             </Container>

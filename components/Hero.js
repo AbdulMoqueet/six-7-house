@@ -30,7 +30,12 @@ const Hero = ({ handleNav }) => {
                 }}>
 
                     <Stack gap="30px" color="#fff" flexDirection="row" alignItems="center">
-                        <StyledButton>Book Now</StyledButton>
+                        <Box sx={{
+                            display: {xs:"none", md: "block"}
+                        }}>
+                          <StyledButton>Book Now</StyledButton>  
+                        </Box>
+                        
                         <FiMenu onClick={handleNav} style={{ fontSize: "30px" }} />
                     </Stack>
 
@@ -43,18 +48,19 @@ const Hero = ({ handleNav }) => {
                 </Box>
 
 
+                {/* Desktop md */}
                 <Box sx={{
                     color: "#fff",
                     textAlign: "center",
-                    display: "grid",
+                    display: { xs: "none", md: "grid" },
                     placeItems: "center",
                     height: "calc(100% - 100px)"
                 }}>
 
                     <Box sx={{
-                        width: {xs:"300px", md:"500px"}
+                        width: { xs: "300px", md: "500px" }
                     }}>
-                        <Typography lineHeight={1.6} fontSize={{xs:"25px", md:"38px"}}>Explore a place with the comfort of an Airbnb and the predictability of a hotel.</Typography>
+                        <Typography lineHeight={1.6} fontSize={{ xs: "25px", md: "38px" }}>Explore a place with the comfort of an Airbnb and the predictability of a hotel.</Typography>
 
                         <Button sx={{
                             color: "#fff",
@@ -79,6 +85,42 @@ const Hero = ({ handleNav }) => {
                 </Box>
 
 
+                {/* Mobile xs, sm */}
+                <Box sx={{
+                    display: {xs:"block", md: "none"}
+                }}>
+                    <Box sx={{
+                        position: "absolute",
+                        width: "230px",
+                        color:"#fff",
+                        bottom: "30px"
+                    }}>
+
+                        <Button sx={{
+                            color: "#fff",
+                            display: "flex",
+                            gap: "5px",
+                            marginTop: "20px",
+                            background: "rgba(128, 128, 128, 0.37)",
+                            padding: "10px",
+                            fontSize: "12px",
+                            "&:hover": {
+                                background: "#fff",
+                                color: "#000"
+                            }
+                        }}>
+                            <HiLocationMarker />
+                            Hout Bay, South Africa
+                        </Button>
+
+                        <Typography my={2} lineHeight={1.6} fontSize="20px">Explore a place with the comfort of an Airbnb and the predictability of a hotel.</Typography>
+
+                        <StyledButton>Book Now</StyledButton>
+
+                    </Box>
+
+                </Box>
+
             </Container>
 
 
@@ -87,7 +129,8 @@ const Hero = ({ handleNav }) => {
                 borderTop: "solid 2px #fff",
                 color: "#fff",
                 bottom: "0px",
-                width: "100%"
+                width: "100%",
+                display: {xs:"none", md: "block"}
             }}>
 
                 <Container>

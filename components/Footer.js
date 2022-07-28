@@ -12,7 +12,7 @@ const Footer = () => {
 
       <Container>
 
-        <Box color="#fff" width="500px">
+        <Box color="#fff" width={{ xs: "300px", md: "500px" }}>
           <Typography fontSize="30px">
             Stay up to date!
           </Typography>
@@ -61,27 +61,27 @@ const Footer = () => {
         <Box sx={{
           marginTop: "30px",
           display: "flex",
-          justifyContent: "space-around",
+          justifyContent: {xs:"center",md:"space-around"},
           color: "#c4c4c4"
         }}>
 
           <Box sx={{
             display: "flex",
-            gap: "14px"
+            gap: {xs:"4px", md:"14px"},
           }}>
-            <Typography>@ 2021 six7house, Inc.</Typography>
-            <Typography>&#9679;</Typography>
-            <Typography>Privacy</Typography>
-            <Typography>&#9679;</Typography>
-            <Typography>Terms</Typography>
-            <Typography>&#9679;</Typography>
-            <Typography>Sitemap</Typography>
-            <Typography>&#9679;</Typography>
-            <Typography>Company details</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>@ 2021 six7house, Inc.</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>&#9679;</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>Privacy</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>&#9679;</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>Terms</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>&#9679;</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>Sitemap</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>&#9679;</Typography>
+            <Typography fontSize={{xs:"9px", md:"16px"}}>Company details</Typography>
           </Box>
 
           <Box sx={{
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             alignItems: "center",
             gap: "4px"
           }}>

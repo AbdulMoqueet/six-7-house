@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography } from '@mui/material'
 import React from 'react'
 
 const Gallery = () => {
@@ -9,7 +9,6 @@ const Gallery = () => {
         }}>
 
             <Box sx={{
-                width: "800px",
                 margin: "auto",
                 textAlign: "center",
                 pb: "100px"
@@ -26,7 +25,7 @@ const Gallery = () => {
 
             <Container>
 
-                <Box sx={{
+                {/* <Box sx={{
                     width: "1100px",
                     display: 'grid',
                     gridTemplateColumns: '1fr 1fr 1fr',
@@ -107,7 +106,72 @@ const Gallery = () => {
                         </Box>
                     </Box>
 
-                </Box>
+                </Box> */}
+
+
+                <div className='gallery'>
+
+                    <div className="gallery-item gallery-item__1">
+                        <img src="/grid__1.png" alt="" className="src" />
+
+                        <Box className='grid-info'>
+                            <Box sx={{ textAlign: "center" }}>
+                                <Typography fontSize={{xs:"12px", md:"28px"}}>Lions Head</Typography>
+                                <Typography fontSize={{xs:"8px", md:"16px"}} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ipsa.</Typography>
+                            </Box>
+                        </Box>
+
+                    </div>
+
+                    <div className="gallery-item">
+                        <img src="/grid__2.png" alt="" className="src" />
+
+                        <Box className='grid-info'>
+                            <Box sx={{ textAlign: "center" }}>
+                                <Typography fontSize={{xs:"12px", md:"28px"}}>Lions Head</Typography>
+                                <Typography fontSize={{xs:"8px", md:"16px"}} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ipsa.</Typography>
+                            </Box>
+                        </Box>
+
+                    </div>
+
+                    <div className="gallery-item">
+                        <img src="/grid__3.png" alt="" className="src" />
+
+                        <Box className='grid-info'>
+                            <Box sx={{ textAlign: "center" }}>
+                                <Typography fontSize={{xs:"12px", md:"28px"}}>Lions Head</Typography>
+                                <Typography fontSize={{xs:"8px", md:"16px"}} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ipsa.</Typography>
+                            </Box>
+                        </Box>
+
+                    </div>
+
+
+                    <div className="gallery-item">
+                        <img src="/grid__4.png" alt="" className="src" />
+
+                        <Box className='grid-info'>
+                            <Box sx={{ textAlign: "center" }}>
+                                <Typography fontSize={{xs:"12px", md:"28px"}}>Lions Head</Typography>
+                                <Typography fontSize={{xs:"8px", md:"16px"}} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ipsa.</Typography>
+                            </Box>
+                        </Box>
+
+                    </div>
+
+                    <div className="gallery-item">
+                        <img src="/grid__5.png" alt="" className="src" />
+
+                        <Box className='grid-info'>
+                            <Box sx={{ textAlign: "center" }}>
+                                <Typography fontSize={{xs:"12px", md:"28px"}}>Lions Head</Typography>
+                                <Typography fontSize={{xs:"8px", md:"16px"}} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, ipsa.</Typography>
+                            </Box>
+                        </Box>
+
+                    </div>
+                </div>
 
             </Container>
 

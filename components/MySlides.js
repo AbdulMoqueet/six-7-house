@@ -13,13 +13,13 @@ const MySlides = () => {
         slidesToScroll: 1,
         customPaging: function (i) {
             return (
-                <div style={{
+                <Box sx={{
                     height: "2px",
                     background: "#BBBBBB",
-                    width: "150px"
+                    width: {xs:"30px", md:"150px"}
                 }}>
 
-                </div>
+                </Box>
             );
         },
     };
@@ -35,7 +35,7 @@ const MySlides = () => {
         }}>
 
             <Box sx={{
-                width: "1000px"
+                width: {xs:"300px", sm:"600px", md:"1000px"}
             }}>
                 <Slider {...settings}>
                     <div>
