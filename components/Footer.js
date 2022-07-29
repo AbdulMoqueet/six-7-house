@@ -14,7 +14,8 @@ const Footer = () => {
     e.preventDefault();
 
     const myPromise = axios
-      .post("http://localhost:3000/api/send-email", { email, name })
+      // .post("http://localhost:3000/api/send-email", { email, name })
+      .post("/api/send-email", { email, name })
       .then((res) => {
         console.log(res.data)
         setName("")
