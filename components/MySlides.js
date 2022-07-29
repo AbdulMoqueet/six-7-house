@@ -34,7 +34,7 @@ const MySlides = () => {
             py: "140px"
         }}>
 
-            <Box sx={{
+            <Box data-aos="fade-up" sx={{
                 width: {xs:"300px", sm:"600px", md:"1000px"}
             }}>
                 <Slider {...settings}>

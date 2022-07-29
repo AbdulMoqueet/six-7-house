@@ -1,8 +1,13 @@
 import { Box, Container, Stack, Button, styled, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { FiMenu } from 'react-icons/fi'
 import { HiLocationMarker } from 'react-icons/hi'
 import { BsChevronDown } from 'react-icons/bs'
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+import Popup from './Popup'
 
 const StyledButton = styled(Button)({
     color: "#fff",
@@ -11,6 +16,34 @@ const StyledButton = styled(Button)({
 })
 
 const Hero = ({ handleNav }) => {
+
+    const [guest, setGuest] = useState(0)
+    const [checkInDate, setCheckInDate] = useState(new Date())
+    const [checkOutDate, setCheckOutDate] = useState(new Date())
+
+    const [popupOpen, setPopupOpen] = useState(false)
+
+    const addGuest = () => {
+        setGuest(++guest)
+    }
+
+    const subGuest = () => {
+        if (guest === 0)
+            return
+        setGuest(--guest)
+    }
+
+    const togglePopup = () => {
+
+        if(!popupOpen){
+            document.body.style.overflowY ="hidden"
+        }else{
+            document.body.style.overflowY ="auto"
+        }
+
+        setPopupOpen(!popupOpen)
+    }
+
     return (
         <Box
             sx={{
@@ -20,6 +53,7 @@ const Hero = ({ handleNav }) => {
                 backgroundPosition: "center",
                 height: "100vh"
             }}>
+            <Popup popupOpen={popupOpen} togglePopup={togglePopup} />
             <Container sx={{ position: "relative", height: "100vh" }}>
                 <Box sx={{
                     position: "relative",
@@ -31,11 +65,11 @@ const Hero = ({ handleNav }) => {
 
                     <Stack gap="30px" color="#fff" flexDirection="row" alignItems="center">
                         <Box sx={{
-                            display: {xs:"none", md: "block"}
+                            display: { xs: "none", md: "block" }
                         }}>
-                          <StyledButton>Book Now</StyledButton>  
+                            <StyledButton>Book Now</StyledButton>
                         </Box>
-                        
+
                         <FiMenu onClick={handleNav} style={{ fontSize: "30px" }} />
                     </Stack>
 
@@ -49,7 +83,7 @@ const Hero = ({ handleNav }) => {
 
 
                 {/* Desktop md */}
-                <Box sx={{
+                <Box data-aos="fade-up" sx={{
                     color: "#fff",
                     textAlign: "center",
                     display: { xs: "none", md: "grid" },
@@ -87,12 +121,12 @@ const Hero = ({ handleNav }) => {
 
                 {/* Mobile xs, sm */}
                 <Box sx={{
-                    display: {xs:"block", md: "none"}
+                    display: { xs: "block", md: "none" }
                 }}>
                     <Box sx={{
                         position: "absolute",
                         width: "230px",
-                        color:"#fff",
+                        color: "#fff",
                         bottom: "30px"
                     }}>
 
@@ -130,7 +164,7 @@ const Hero = ({ handleNav }) => {
                 color: "#fff",
                 bottom: "0px",
                 width: "100%",
-                display: {xs:"none", md: "block"}
+                display: { xs: "none", md: "block" }
             }}>
 
                 <Container>
@@ -145,20 +179,68 @@ const Hero = ({ handleNav }) => {
                             display: "flex",
                             gap: "100px"
                         }}>
-                            <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>Check-In <BsChevronDown /> </Box>
-                            <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>Check-Out <BsChevronDown /> </Box>
+
+                            <Box sx={{
+                                position: "relative",
+                                "&:hover": {
+                                    color: "rgba(200, 200, 200, 0.9)"
+                                }
+                            }}>
+
+                                <Box sx={{
+                                    display: "flex",
+                                    gap: "10px",
+                                    alignItems: "center",
+
+                                }}>
+                                    Check-In <BsChevronDown />
+                                </Box>
+
+                                <DatePicker className='date-picker' selected={checkInDate} onChange={(date) => setCheckInDate(date)} />
+
+                            </Box>
+
+
+                            <Box sx={{
+                                position: "relative",
+                                "&:hover": {
+                                    color: "rgba(200, 200, 200, 0.9)"
+                                }
+                            }}>
+
+                                <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                    Check-Out <BsChevronDown />
+                                </Box>
+
+                                <DatePicker className='date-picker checkout-date-picker' selected={checkOutDate} onChange={(date) => setCheckOutDate(date)} />
+
+                            </Box>
 
                             <Box sx={{ display: "flex", gap: "10px" }}>
                                 <Box>Guest</Box>
                                 <Box sx={{ display: "flex", gap: "8px" }}>
-                                    <Box>-</Box>
-                                    <Box>0</Box>
-                                    <Box>+</Box>
+                                    <Box sx={{
+                                        cursor: "pointer",
+                                        userSelect: "none",
+                                        "&:hover": {
+                                            color: "rgba(200, 200, 200, 0.9)"
+                                        }
+                                    }} onClick={subGuest}>-</Box>
+                                    <Box>{guest}</Box>
+                                    <Box sx={{
+                                        cursor: "pointer",
+                                        userSelect: "none",
+                                        "&:hover": {
+                                            color: "rgba(200, 200, 200, 0.9)"
+                                        }
+                                    }} onClick={addGuest}>+</Box>
                                 </Box>
                             </Box>
                         </Box>
 
-                        <Box>
+                        <Box sx={{
+                            cursor: "pointer"
+                        }} onClick={togglePopup}>
                             Check Availability
                         </Box>
 
