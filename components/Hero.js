@@ -4,10 +4,11 @@ import { FiMenu } from 'react-icons/fi'
 import { HiLocationMarker } from 'react-icons/hi'
 import { BsChevronDown } from 'react-icons/bs'
 
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
 import Popup from './Popup'
+
+import 'react-date-range/dist/styles.css'; 
+import 'react-date-range/dist/theme/default.css'; 
+import { DateRangePicker } from 'react-date-range';
 
 const StyledButton = styled(Button)({
     color: "#fff",
@@ -18,30 +19,76 @@ const StyledButton = styled(Button)({
 const Hero = ({ handleNav }) => {
 
     const [guest, setGuest] = useState(0)
-    const [checkInDate, setCheckInDate] = useState(new Date())
-    const [checkOutDate, setCheckOutDate] = useState(new Date())
+    const [enabled, setEnabled] = useState(false)
+
+    const [checkIn, setCheckIn] = useState(false)
+    const toggleCheckIn = () => {
+        setCheckIn(!checkIn)
+    }
+
+    const [checkOut, setCheckOut] = useState(false)
+    const toggleCheckOut = () => {
+        setCheckOut(!checkOut)
+    }
 
     const [popupOpen, setPopupOpen] = useState(false)
 
     const addGuest = () => {
         setGuest(++guest)
+        if (+date[0].startDate !== +date[0].endDate && guest !== 0) {
+            setEnabled(true)
+        } else {
+            setEnabled(false)
+        }
     }
 
     const subGuest = () => {
         if (guest === 0)
             return
         setGuest(--guest)
+        if (+date[0].startDate !== +date[0].endDate && guest !== 0) {
+            setEnabled(true)
+        } else {
+            setEnabled(false)
+        }
     }
 
     const togglePopup = () => {
 
-        if(!popupOpen){
-            document.body.style.overflowY ="hidden"
-        }else{
-            document.body.style.overflowY ="auto"
+        if (!enabled)
+            return
+
+        if (!popupOpen) {
+            document.body.style.overflowY = "hidden"
+
+            console.log("-----------------");
+            console.log('Check-In Date: ', date[0].startDate);
+            console.log('Check-Out Date: ', date[0].endDate);
+            console.log('Number of guest: ', guest);
+            console.log("-----------------");
+            
+        } else {
+            document.body.style.overflowY = "auto"
         }
 
         setPopupOpen(!popupOpen)
+    }
+
+    const [date, setDate] = useState([
+        {
+            startDate: new Date(),
+            endDate: new Date(),
+            key: 'selection'
+        }
+    ]);
+
+    const handleChange = (ranges) => {
+        setDate([ranges.selection])
+        if (+ranges.selection.startDate !== +ranges.selection.endDate && guest !== 0) {
+            setEnabled(true)
+        } else {
+            setEnabled(false)
+        }
     }
 
     return (
@@ -191,12 +238,26 @@ const Hero = ({ handleNav }) => {
                                     display: "flex",
                                     gap: "10px",
                                     alignItems: "center",
+                                    cursor: "pointer"
 
-                                }}>
+                                }} onClick={toggleCheckIn}>
                                     Check-In <BsChevronDown />
                                 </Box>
 
-                                <DatePicker className='date-picker' selected={checkInDate} onChange={(date) => setCheckInDate(date)} />
+
+                                <Box sx={{
+                                    display: checkIn ? "block" : "none"
+                                }}>
+                                    <DateRangePicker
+                                        className='check-in-date-range-picker'
+                                        onChange={handleChange}
+                                        showSelectionPreview={true}
+                                        moveRangeOnFirstSelection={false}
+                                        ranges={date}
+                                        direction="horizontal"
+                                        minDate={new Date()}
+                                    />
+                                </Box>
 
                             </Box>
 
@@ -208,11 +269,28 @@ const Hero = ({ handleNav }) => {
                                 }
                             }}>
 
-                                <Box sx={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                                <Box sx={{
+                                    display: "flex",
+                                    gap: "10px",
+                                    alignItems: "center",
+                                    cursor: "pointer"
+                                }} onClick={toggleCheckOut}>
                                     Check-Out <BsChevronDown />
                                 </Box>
 
-                                <DatePicker className='date-picker checkout-date-picker' selected={checkOutDate} onChange={(date) => setCheckOutDate(date)} />
+                                <Box sx={{
+                                    display: checkOut ? "block" : "none"
+                                }}>
+                                    <DateRangePicker
+                                        className='check-out-date-range-picker'
+                                        onChange={handleChange}
+                                        showSelectionPreview={true}
+                                        moveRangeOnFirstSelection={false}
+                                        ranges={date}
+                                        minDate={new Date()}
+                                        direction="horizontal"
+                                    />
+                                </Box>
 
                             </Box>
 
@@ -239,7 +317,8 @@ const Hero = ({ handleNav }) => {
                         </Box>
 
                         <Box sx={{
-                            cursor: "pointer"
+                            cursor: enabled ? "pointer" : "auto",
+                            color: enabled ? "#fff" : "rgba(200, 200, 200, 0.8)"
                         }} onClick={togglePopup}>
                             Check Availability
                         </Box>

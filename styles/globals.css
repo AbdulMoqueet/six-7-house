@@ -132,20 +132,12 @@ body {
   object-fit: cover;
 }
 
-.react-datepicker-wrapper{
+.check-in-date-range-picker{
   position: absolute;
-  top: 0;
+  top: -390px;
 }
 
-.date-picker{
+.check-out-date-range-picker{
   position: absolute;
-  width: 90px;
-  top: -15px;
-  cursor: pointer;
-  opacity: 0;
-}
-
-.checkout-date-picker{
-  width: 100px;
-  background-color: rgba(200, 200, 200, 0.9);
+  top: -390px;
 }
