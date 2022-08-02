@@ -10,7 +10,7 @@ import Navbar from '../components/Navbar'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const contact = () => {
+const Contact = () => {
 
   const [navOpen, setNavOpen] = useState(false)
 
@@ -44,4 +44,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact
