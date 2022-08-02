@@ -11,12 +11,17 @@ const StyledButton = styled(Button)({
     }
 })
 
-const Discover = () => {
+const Discover = ({ hide }) => {
     return (
-        <Box py="200px">
+        <Box py={hide ? "100px":"200px"}>
 
-            <Box data-aos="fade-up" sx={{ margin: "auto", width: {xs:"300px", md:"800px"}, textAlign: "center" }}>
-                <Typography fontSize={{xs:"20px", md:"40px"}}>Introducing six7house. A dream made true in Hout Bay.</Typography>
+            <Box data-aos="fade-up" sx={{
+                margin: "auto",
+                width: { xs: "300px", md: "800px" },
+                textAlign: "center",
+                display: hide ? "none" : "block"
+            }}>
+                <Typography fontSize={{ xs: "20px", md: "40px" }}>Introducing six7house. A dream made true in Hout Bay.</Typography>
 
                 <StyledButton>
                     Discover More
@@ -86,10 +91,10 @@ const Discover = () => {
             </Container>
 
 
-            <Box data-aos="fade-up" sx={{ margin: "auto", width: {xs:"300px", md:"800px"}, textAlign: "center" }}>
+            <Box data-aos="fade-up" sx={{ margin: "auto", width: { xs: "300px", md: "800px" }, textAlign: "center" }}>
 
                 <img src="/sea-and-sun.svg" alt="" />
-                <Typography pt="10px" lineHeight={1.6} fontSize={{xs:"20px", md:"40px"}}>Soulful Bohemian style featuring sleek and modern design full of South African magic light</Typography>
+                <Typography pt="10px" lineHeight={1.6} fontSize={{ xs: "20px", md: "40px" }}>Soulful Bohemian style featuring sleek and modern design full of South African magic light</Typography>
 
                 <StyledButton>See all rooms</StyledButton>
 

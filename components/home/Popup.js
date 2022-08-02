@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
-import Backdrop from './Backdrop'
+import Backdrop from '../Backdrop'
 
 const Popup = ({popupOpen, togglePopup}) => {
     return (

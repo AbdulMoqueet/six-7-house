@@ -109,8 +109,19 @@ body {
   width: 100%;
 }
 
-::placeholder { 
+.form-input-name::placeholder, .form-input-email::placeholder { 
   color: #c4c4c4;
+}
+
+.contact-input{
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #c4c4c4;
+  font-size: 24px;
+  width: 100%;
+  padding: 0 15px;
+  padding-bottom: 10px;
 }
 
 
@@ -140,4 +151,9 @@ body {
 .check-out-date-range-picker{
   position: absolute;
   top: -390px;
+}
+
+.nav-active{
+  color: #fff !important;
+  font-size: 35px !important;
 }

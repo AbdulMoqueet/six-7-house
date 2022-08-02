@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import React from 'react'
 
 import { AiOutlineCloseCircle } from "react-icons/ai"
-import Backdrop from './Backdrop'
+import Backdrop from '../Backdrop'
 
 const GalleryModal = ({ modalOpen, closeModal, modalImg }) => {
     return (

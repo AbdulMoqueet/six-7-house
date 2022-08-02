@@ -2,6 +2,8 @@ import { Box, Button, Container, Grid, Stack, styled, Typography } from '@mui/ma
 import React from 'react'
 import { VscChromeClose } from 'react-icons/vsc'
 import { FiInstagram } from 'react-icons/fi'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const StyledButton = styled(Button)({
     color: "#fff",
@@ -9,7 +11,15 @@ const StyledButton = styled(Button)({
     textTransform: "none"
 })
 
-const Navbar = ({ navOpen, handleNav }) => {
+const Navbar = ({ navOpen, handleNav, home, about, contact }) => {
+
+    const router = useRouter()
+
+    const navigate = (url) => {
+        router.push(url)
+        handleNav()
+    }
+
     return (
         <Box sx={{
             position: "fixed",
@@ -80,23 +90,56 @@ const Navbar = ({ navOpen, handleNav }) => {
                                             color: "#B4B4B4",
                                             textAlign: "right"
                                         }}>
-                                            <Typography color="#fff" fontSize={{ xs: "20px", md: "30px" }}>Home</Typography>
-                                            <Typography my="20px" fontSize={{ xs: "20px", md: "30px" }}>About</Typography>
+                                            <Typography className={home ? "nav-active" : ""}
+                                                sx={{
+                                                    fontSize: { xs: "20px", md: "30px" },
+                                                    cursor: "pointer",
+                                                    "&:hover": { color: "#fff" }
+                                                }} onClick={() => navigate('/')}>Home</Typography>
+
+                                            <Typography className={about ? "nav-active" : ""} my="20px"
+                                                sx={{
+                                                    fontSize: { xs: "20px", md: "30px" },
+                                                    cursor: "pointer",
+                                                    "&:hover": { color: "#fff" }
+                                                }} onClick={() => navigate('/about')}>About</Typography>
 
                                             <Box sx={{
                                                 display: "flex",
                                                 flexDirection: "column",
                                                 gap: "15px"
                                             }}>
-                                                <Typography fontSize={{ xs: "20px", md: "30px" }}>Rooms</Typography>
-                                                <Typography>Premier</Typography>
-                                                <Typography>Junior</Typography>
-                                                <Typography>Deluxe</Typography>
-                                                <Typography>Senior</Typography>
+                                                <Typography sx={{
+                                                    fontSize: { xs: "20px", md: "30px" },
+                                                    cursor: "pointer",
+                                                    "&:hover": { color: "#fff" }
+                                                }}>Rooms</Typography>
+
+                                                <Typography sx={{
+                                                    cursor: "pointer",
+                                                    "&:hover": { color: "#fff" }
+                                                }}>Premier</Typography>
+                                                <Typography sx={{
+                                                    cursor: "pointer",
+                                                    "&:hover": { color: "#fff" }
+                                                }}>Junior</Typography>
+                                                <Typography sx={{
+                                                    cursor: "pointer",
+                                                    "&:hover": { color: "#fff" }
+                                                }}>Deluxe</Typography>
+                                                <Typography sx={{
+                                                    cursor: "pointer",
+                                                    "&:hover": { color: "#fff" }
+                                                }}>Senior</Typography>
                                             </Box>
 
 
-                                            <Typography mt="20px" fontSize={{ xs: "20px", md: "30px" }}>Contact</Typography>
+                                            <Typography className={contact ? "nav-active" : ""} mt="20px"
+                                                sx={{
+                                                    cursor: "pointer",
+                                                    fontSize: { xs: "20px", md: "30px" },
+                                                    "&:hover": { color: "#fff" }
+                                                }} onClick={() => navigate('/contact')}>Contact</Typography>
                                         </Box>
 
 

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Discover from "../components/Discover";
+import Discover from "../components/home/Discover";
 import Footer from "../components/Footer";
-import Gallery from "../components/Gallery";
-import Hero from "../components/Hero";
-import Slides from "../components/MySlides";
+import Gallery from "../components/home/Gallery";
+import Hero from "../components/home/Hero";
+import Slides from "../components/home/MySlides";
 import Navbar from "../components/Navbar";
 
 import AOS from "aos";
@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar navOpen={navOpen} handleNav={handleNav} />
+      <Navbar navOpen={navOpen} handleNav={handleNav} home={true} />
       <Hero handleNav={handleNav} />
       <Slides />
       <Discover />
