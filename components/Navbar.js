@@ -11,7 +11,7 @@ const StyledButton = styled(Button)({
     textTransform: "none"
 })
 
-const Navbar = ({ navOpen, handleNav, home, about, contact }) => {
+const Navbar = ({ navOpen, handleNav, home, about, contact, rooms }) => {
 
     const router = useRouter()
 
@@ -109,11 +109,11 @@ const Navbar = ({ navOpen, handleNav, home, about, contact }) => {
                                                 flexDirection: "column",
                                                 gap: "15px"
                                             }}>
-                                                <Typography sx={{
+                                                <Typography className={rooms ? "nav-active" : ""} sx={{
                                                     fontSize: { xs: "20px", md: "30px" },
                                                     cursor: "pointer",
                                                     "&:hover": { color: "#fff" }
-                                                }}>Rooms</Typography>
+                                                }} onClick={() => navigate('/rooms')}>Rooms</Typography>
 
                                                 <Typography sx={{
                                                     cursor: "pointer",

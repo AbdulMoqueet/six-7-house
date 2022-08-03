@@ -157,3 +157,7 @@ body {
   color: #fff !important;
   font-size: 35px !important;
 }
+
+.room-active{
+  color: #000 !important;
+}
