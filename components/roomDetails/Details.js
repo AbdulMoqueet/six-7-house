@@ -16,7 +16,8 @@ const Details = () => {
                     }}>
 
                         <Box sx={{
-                            width: "260px"
+                            width: "260px",
+                            margin: { md: "0", xs: "auto" }
                         }}>
 
                             <Typography letterSpacing="2px" mb="20px" fontSize="38px">Pemier Suite </Typography>
@@ -29,7 +30,8 @@ const Details = () => {
                         <Box sx={{
                             background: "#BBBBBB",
                             width: "2px",
-                            height: "100%"
+                            height: "100%",
+                            display: { xs: "none", md: "block" }
                         }} />
 
                     </Grid>
@@ -39,7 +41,9 @@ const Details = () => {
                         <Box sx={{
                             color: "#464646",
                             display: "flex",
-                            gap: "200px"
+                            gap: {xs: "50px", md:"200px"},
+                            flexWrap: 'wrap',
+                            justifyContent: 'center'
                         }}>
 
                             <Stack gap="20px">
