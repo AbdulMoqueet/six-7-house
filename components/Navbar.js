@@ -118,19 +118,19 @@ const Navbar = ({ navOpen, handleNav, home, about, contact, rooms }) => {
                                                 <Typography sx={{
                                                     cursor: "pointer",
                                                     "&:hover": { color: "#fff" }
-                                                }}>Premier</Typography>
+                                                }} onClick={() => navigate('/room-details')}>Premier</Typography>
                                                 <Typography sx={{
                                                     cursor: "pointer",
                                                     "&:hover": { color: "#fff" }
-                                                }}>Junior</Typography>
+                                                }} onClick={() => navigate('/room-details')}>Junior</Typography>
                                                 <Typography sx={{
                                                     cursor: "pointer",
                                                     "&:hover": { color: "#fff" }
-                                                }}>Deluxe</Typography>
+                                                }} onClick={() => navigate('/room-details')}>Deluxe</Typography>
                                                 <Typography sx={{
                                                     cursor: "pointer",
                                                     "&:hover": { color: "#fff" }
-                                                }}>Senior</Typography>
+                                                }} onClick={() => navigate('/room-details')}>Senior</Typography>
                                             </Box>
 
 

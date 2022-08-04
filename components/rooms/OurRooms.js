@@ -1,4 +1,5 @@
 import { Box, Button, Container, Grid, Stack, styled, Typography } from '@mui/material'
+import { useRouter } from 'next/router'
 import React, { useRef } from 'react'
 
 const StyledTypo = styled(Typography)({
@@ -18,13 +19,21 @@ const OurRooms = () => {
 
     const changeRoom = (event, url) => {
         imgRef.current.src = url
-        
+
         op1.current.classList.remove('room-active')
         op2.current.classList.remove('room-active')
         op3.current.classList.remove('room-active')
         op4.current.classList.remove('room-active')
-        
+
         event.target.classList.add('room-active')
+    }
+
+    const router = useRouter()
+
+    const navigate = (url) => {
+        router.push(url)
+        if (typeof handleNav !== 'undefined')
+            handleNav()
     }
 
     return (
@@ -67,7 +76,7 @@ const OurRooms = () => {
                                         background: "#848A7D",
                                         marginRight: "10px",
                                         "&:hover": { background: "#000" }
-                                    }} variant='contained'>View More</Button>
+                                    }} variant='contained' onClick={() => navigate('/room-details')}>View More</Button>
 
                                     <Button sx={{
                                         color: "#848A7D",
