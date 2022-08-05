@@ -6,6 +6,8 @@ const StyledButton = styled(Button)({
     color: "#fff",
     textTransform: "none",
     marginTop: "20px",
+    borderRadius: 0,
+    padding: "10px 10px",
     "&:hover": {
         background: "#000"
     }
@@ -32,7 +34,7 @@ const Discover = ({ hide }) => {
 
             <Container >
 
-                <Grid container py="100px" spacing={4}>
+                <Grid container py="200px" spacing="24px">
 
                     <Grid data-aos="fade-up" item xs={12} md={6} >
 

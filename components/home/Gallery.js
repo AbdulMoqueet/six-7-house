@@ -34,7 +34,9 @@ const Gallery = () => {
                     Explore our Photo Gallery
                 </Typography>
 
-                <Typography mt="10px" color="#848A7D">Instagram</Typography>
+                <Typography mt="10px" color="#848A7D" sx={{
+                    textDecoration: 'underline'
+                }}>Instagram</Typography>
 
             </Box>
 

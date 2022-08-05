@@ -6,14 +6,16 @@ import { BsChevronDown } from 'react-icons/bs'
 
 import Popup from './Popup'
 
-import 'react-date-range/dist/styles.css'; 
-import 'react-date-range/dist/theme/default.css'; 
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 import { DateRangePicker } from 'react-date-range';
+import Link from 'next/link'
 
 const StyledButton = styled(Button)({
     color: "#fff",
     border: "1px solid #E7E1DC",
-    textTransform: "none"
+    textTransform: "none",
+    borderRadius: 0
 })
 
 const Hero = ({ handleNav }) => {
@@ -66,7 +68,7 @@ const Hero = ({ handleNav }) => {
             console.log('Check-Out Date: ', date[0].endDate);
             console.log('Number of guest: ', guest);
             console.log("-----------------");
-            
+
         } else {
             document.body.style.overflowY = "auto"
         }
@@ -110,21 +112,27 @@ const Hero = ({ handleNav }) => {
                     paddingTop: "30px"
                 }}>
 
-                    <Stack gap="30px" color="#fff" flexDirection="row" alignItems="center">
+                    <Stack gap="40px" color="#fff" flexDirection="row" alignItems="center">
                         <Box sx={{
                             display: { xs: "none", md: "block" }
                         }}>
                             <StyledButton>Book Now</StyledButton>
                         </Box>
 
-                        <FiMenu onClick={handleNav} style={{ fontSize: "30px" }} />
+                        <Box sx={{
+                            cursor: 'pointer'
+                        }} onClick={handleNav} component="img" src="/menu.svg" />
+
                     </Stack>
 
-                    <Box sx={{
-                        position: "absolute",
-                        left: { xs: 0, md: "50%" },
-                        transform: { xs: "translate(0)", md: "translate(-50%)" }
-                    }} component="img" src="/logo_main.png" alt="Logo" />
+                    <Link href="/">
+                        <Box sx={{
+                            position: "absolute",
+                            left: { xs: 0, md: "50%" },
+                            transform: { xs: "translate(0)", md: "translate(-50%)" },
+                            cursor: "pointer"
+                        }} component="img" src="/logo_main.png" alt="Logo" />
+                    </Link>
 
                 </Box>
 
@@ -139,7 +147,7 @@ const Hero = ({ handleNav }) => {
                 }}>
 
                     <Box sx={{
-                        width: { xs: "300px", md: "500px" }
+                        width: { xs: "300px", md: "600px" }
                     }}>
                         <Typography lineHeight={1.6} fontSize={{ xs: "25px", md: "38px" }}>Explore a place with the comfort of an Airbnb and the predictability of a hotel.</Typography>
 
@@ -156,8 +164,8 @@ const Hero = ({ handleNav }) => {
                                 color: "#000"
                             }
                         }}>
-                            <HiLocationMarker />
-                            Hout Bay, South Africa
+                            <HiLocationMarker fontSize="20px" />
+                            <Typography fontSize="12px">Hout Bay, South Africa</Typography>
                         </Button>
                     </Box>
 
@@ -296,7 +304,7 @@ const Hero = ({ handleNav }) => {
 
                             <Box sx={{ display: "flex", gap: "10px" }}>
                                 <Box>Guest</Box>
-                                <Box sx={{ display: "flex", gap: "8px" }}>
+                                <Box sx={{ display: "flex", gap: "8px", alignItems: "center" }}>
                                     <Box sx={{
                                         cursor: "pointer",
                                         userSelect: "none",
@@ -304,7 +312,7 @@ const Hero = ({ handleNav }) => {
                                             color: "rgba(200, 200, 200, 0.9)"
                                         }
                                     }} onClick={subGuest}>-</Box>
-                                    <Box>{guest}</Box>
+                                    <Box sx={{ fontSize: "14px" }}>{guest}</Box>
                                     <Box sx={{
                                         cursor: "pointer",
                                         userSelect: "none",

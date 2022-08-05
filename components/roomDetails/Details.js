@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material'
 import React from 'react'
 
 const Details = () => {
@@ -21,9 +21,22 @@ const Details = () => {
                         }}>
 
                             <Typography letterSpacing="2px" mb="20px" fontSize="38px">Pemier Suite </Typography>
-                            <Typography color="#464646" lineHeight={1.7}>
+                            <Typography color="#464646" lineHeight={1.6}>
                                 An Cape Town style room with a natural set of design details to add up to a king size bed and a large private terrace. Contemporary elements like copper and limestone on the wall, or stone pebble floors in its large bathroom
                             </Typography>
+
+                            <Button sx={{
+                                color: "#848A7D",
+                                borderColor: "#848A7D",
+                                textTransform: "none",
+                                mt: "20px",
+                                fontSize: "20px",
+                                padding: "0 10px",
+                                "&:hover": {
+                                    color: "#000",
+                                    borderColor: "#000"
+                                }
+                            }} variant='outlined'>Book Now</Button>
 
                         </Box>
 
@@ -41,12 +54,12 @@ const Details = () => {
                         <Box sx={{
                             color: "#464646",
                             display: "flex",
-                            gap: {xs: "50px", md:"200px"},
+                            gap: { xs: "50px", md: "200px" },
                             flexWrap: 'wrap',
                             justifyContent: 'center'
                         }}>
 
-                            <Stack gap="20px">
+                            <Stack gap="15px">
                                 <Typography fontSize="20px">
                                     38 - 45 sqm (inc. terrace)
                                 </Typography>
@@ -70,7 +83,7 @@ const Details = () => {
                             </Stack>
 
 
-                            <Stack gap="20px">
+                            <Stack gap="15px">
                                 <Typography fontSize="20px">
                                     Terrace
                                 </Typography>

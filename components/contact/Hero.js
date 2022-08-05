@@ -3,11 +3,13 @@ import React, { useState } from 'react'
 import { FiMenu } from 'react-icons/fi'
 import { HiLocationMarker } from 'react-icons/hi'
 import { BsChevronDown } from 'react-icons/bs'
+import Link from 'next/link'
 
 const StyledButton = styled(Button)({
     color: "#fff",
     border: "1px solid #E7E1DC",
-    textTransform: "none"
+    textTransform: "none",
+    borderRadius: 0
 })
 
 const Hero = ({ handleNav }) => {
@@ -31,21 +33,27 @@ const Hero = ({ handleNav }) => {
                     paddingTop: "30px"
                 }}>
 
-                    <Stack gap="30px" color="#fff" flexDirection="row" alignItems="center">
+                    <Stack gap="40px" color="#fff" flexDirection="row" alignItems="center">
                         <Box sx={{
                             display: { xs: "none", md: "block" }
                         }}>
                             <StyledButton>Book Now</StyledButton>
                         </Box>
 
-                        <FiMenu onClick={handleNav} style={{ fontSize: "30px" }} />
+                        <Box sx={{
+                            cursor: 'pointer'
+                        }} onClick={handleNav} component="img" src="/menu.svg" />
+
                     </Stack>
 
-                    <Box sx={{
-                        position: "absolute",
-                        left: { xs: 0, md: "50%" },
-                        transform: { xs: "translate(0)", md: "translate(-50%)" }
-                    }} component="img" src="/logo_main.png" alt="Logo" />
+                    <Link href="/">
+                        <Box sx={{
+                            position: "absolute",
+                            left: { xs: 0, md: "50%" },
+                            transform: { xs: "translate(0)", md: "translate(-50%)" },
+                            cursor: "pointer"
+                        }} component="img" src="/logo_main.png" alt="Logo" />
+                    </Link>
 
                 </Box>
 

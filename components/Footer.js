@@ -77,6 +77,8 @@ const Footer = () => {
                   <input type="submit" value="Subscribe" style={{
                     position: "absolute",
                     right: 0,
+                    top:"0",
+                    fontSize: "18px",
                     color: "#fff",
                     textDecoration: "none",
                     background: "transparent",
@@ -106,14 +108,14 @@ const Footer = () => {
           marginTop: "30px",
           display: "flex",
           justifyContent: { xs: "center", md: "space-around" },
-          color: "#c4c4c4"
+          color: "#fff"
         }}>
 
           <Box sx={{
             display: "flex",
             gap: { xs: "4px", md: "14px" },
           }}>
-            <Typography fontSize={{ xs: "9px", md: "16px" }}>@ 2021 six7house, Inc.</Typography>
+            <Typography fontSize={{ xs: "9px", md: "16px" }}>@ 2022 six7house, Inc.</Typography>
             <Typography fontSize={{ xs: "9px", md: "16px" }}>&#9679;</Typography>
             <Typography fontSize={{ xs: "9px", md: "16px" }}>Privacy</Typography>
             <Typography fontSize={{ xs: "9px", md: "16px" }}>&#9679;</Typography>

@@ -75,12 +75,16 @@ const OurRooms = () => {
                                     <Button sx={{
                                         background: "#848A7D",
                                         marginRight: "10px",
+                                        borderRadius: 0,
+                                        textTransform: "none",
                                         "&:hover": { background: "#000" }
                                     }} variant='contained' onClick={() => navigate('/room-details')}>View More</Button>
 
                                     <Button sx={{
                                         color: "#848A7D",
                                         borderColor: "#848A7D",
+                                        borderRadius: 0,
+                                        textTransform: "none",
                                         "&:hover": {
                                             color: "#000",
                                             borderColor: "#000"

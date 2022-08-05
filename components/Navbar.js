@@ -8,7 +8,8 @@ import { useRouter } from 'next/router'
 const StyledButton = styled(Button)({
     color: "#fff",
     border: "1px solid #E7E1DC",
-    textTransform: "none"
+    textTransform: "none",
+    borderRadius: 0
 })
 
 const Navbar = ({ navOpen, handleNav, home, about, contact, rooms }) => {

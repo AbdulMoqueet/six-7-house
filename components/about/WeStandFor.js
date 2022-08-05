@@ -30,6 +30,7 @@ const WeStandFor = () => {
 
                 <Box sx={{
                     display: "flex",
+                    gap: "10px",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems:"center"
@@ -40,6 +41,7 @@ const WeStandFor = () => {
 
                 <Box sx={{
                     display: "flex",
+                    gap: "10px",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems:"center"
@@ -50,6 +52,7 @@ const WeStandFor = () => {
 
                 <Box sx={{
                     display: "flex",
+                    gap: "10px",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems:"center"

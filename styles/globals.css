@@ -107,6 +107,7 @@ body {
   font-size: 30px;
   color: #fff;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .form-input-name::placeholder, .form-input-email::placeholder { 
@@ -160,4 +161,5 @@ body {
 
 .room-active{
   color: #000 !important;
+  font-weight: 500 !important;
 }

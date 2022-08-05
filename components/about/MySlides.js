@@ -26,7 +26,7 @@ const MySlides = () => {
 
     return (
         <Box sx={{
-            background: "#E0E2DF",
+            background: "#fff",
             minHeight: "100vh",
             position: "relative",
             display: "grid",
